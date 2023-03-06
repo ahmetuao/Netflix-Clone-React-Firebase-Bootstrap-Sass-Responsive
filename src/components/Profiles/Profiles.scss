@@ -1,0 +1,102 @@
+.profiles {
+  .add-profile-section {
+    margin-top: 1rem;
+  }
+  .profile-input {
+    background: #666;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 18px;
+    height: 2em;
+    margin: 0 0.8em 0 0;
+    padding: 0.2em 0.6em;
+    text-indent: 0.1vw;
+    width: 18em;
+    text-align: center;
+    &:focus-visible {
+      border: none;
+      outline: none;
+    }
+    &::placeholder {
+      color: #fff;
+      text-align: center;
+    }
+  }
+  .profile-button {
+    background-color: transparent;
+    border: 1px solid grey;
+    color: grey;
+    cursor: pointer;
+    display: block;
+    font-size: 1.2vw;
+    letter-spacing: 2px;
+    margin: 2em 0 1em;
+    padding: 0.5em 1.5em;
+    height: 40px;
+    line-height: 1;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    &:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+    @include media-breakpoint-up(sm) {
+      width: fit-content;
+    }
+  }
+  .profile-cards {
+    margin: 5rem 0 8rem 0;
+    @include media-breakpoint-down(sm) {
+    margin: 2rem 0 5rem 0;
+  }
+  .profile-name {
+    text-transform: uppercase;
+  }
+  }
+  h6 {
+    color: grey !important;
+    font-size: 1rem;
+    margin-top: 10px;
+    @include media-breakpoint-down(sm) {
+      font-size: 12px;
+  }
+  }
+  .top-title {
+    font-size: 44px;
+    @include media-breakpoint-down(sm) {
+      font-size: 30px;
+  }
+  }
+  h2,h3 {
+    color: grey;
+    font-size: 28px;
+    @include media-breakpoint-down(sm) {
+      font-size: 20px;
+  }
+
+  }
+  .choose-profile-card {
+    width: 123px;
+    height: 123px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    &:nth-child(odd) {
+      .card {
+        background-image: url('http://occ-0-7335-3467.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABdi6oYb6DJb1LndQWckgaXvrqqP3QURNa8Xngiq7wwFwDtWIg1otEuYKVxbYwS9c5clAI1_Bn7DuljwcvhfUzQu2_Y2v9y5P6t_n.png?r=e6e');
+      }
+    }
+    &:nth-child(even) {
+      .card {
+        background-image: url('http://occ-0-7335-3467.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABY5cwIbM7shRfcXmfQg98cqMqiZZ8sReZnj4y_keCAHeXmG_SoqLD8SXYistPtesdqIjcsGE-tHO8RR92n7NyxZpqcFS80YfbRFz.png?r=229)');
+      }
+    }
+    .card {
+      height: 100%;
+      width: 123px;
+      height: 123px;
+      background-size: contain;
+    }
+  }
+}

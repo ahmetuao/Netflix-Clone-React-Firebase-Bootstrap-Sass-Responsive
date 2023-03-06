@@ -1,0 +1,68 @@
+.movies-list {
+  .movie-card {
+    &:hover {
+      .movie {
+        img {
+          transform: scale(1.1);
+        transition: transform .4s;
+        }
+
+    }
+    }
+
+    img {
+      transition: transform .4s;
+
+    }
+    &:hover {
+      // transform: scale(1.5);
+      z-index: 99;
+      // .inner {
+      //   visibility: visible;
+      //   width: 200px;
+      //   height: 200px;
+      // }
+    }
+
+
+    .movie-details-card {
+      position: absolute;
+      visibility: hidden;
+      height: 0%;
+      width: 100%;
+      bottom: 0;
+      transition: height 0.4s;
+      box-shadow: .5rem .5rem 16px rgba(0,0,0,.5)!important;
+      border-radius: .25rem;
+      overflow: hidden;
+      .card {
+        height: 100%;
+        width: 100%;
+        border: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        .card-body {
+        }
+        img {
+          max-height: 250px;
+          object-fit: cover;
+          object-position: top;
+        }
+      }
+      &.active {
+        position: absolute;
+        visibility: visible;
+        height: 400px;
+        width: 400px;
+        bottom: calc(50% - 200px);
+         left: 0;
+         right: 0;
+        transition: height 0.4s;
+        z-index: 2;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+          }
+      }
+    }
+  }
+}

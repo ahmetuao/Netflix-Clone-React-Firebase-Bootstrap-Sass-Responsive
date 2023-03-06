@@ -1,0 +1,13 @@
+.slider-area {
+  height: 340px;
+  &.series {
+    .series-title {
+      @include media-breakpoint-down(sm) {
+        margin-top: 1rem !important;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    height: auto;
+  }
+}

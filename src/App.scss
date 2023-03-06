@@ -1,0 +1,287 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "./components/Header/Header.scss";
+@import "./components/MoviesList/MoviesList.scss";
+@import "./components/MovieDetailsCard/MovieDetailsCard.scss";
+@import "./components/MoviesDetailsModal/MovieDetailsModal.scss";
+@import "./components/Hero/Hero.scss";
+@import "./components/SearchBar/SearchBar.scss";
+@import "./components/Search/Search.scss";
+@import "./utils/video.scss";
+@import "./components/Main/Main.scss";
+@import "./components/Login/Login.scss";
+@import "./components/Signup/Signup.scss";
+@import "./components/Profiles/Profiles.scss";
+
+
+html {
+    &.active {
+        overflow: hidden;
+    }
+}
+ul {
+    list-style: none;
+    margin: 0 !important;
+}
+
+a {
+    text-decoration: none !important;
+    &:hover {
+        transition: color .2s;
+    }
+}
+
+.pagelayout {
+    padding-top: calc(85vh);
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 70vh
+    }
+
+    &-sub {
+        padding-top: 128px;
+    }
+}
+
+h1,h2,h3,h4,h5,h6,p,span {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    padding-left: 60px;
+    padding-right: 60px;
+    
+    @include media-breakpoint-down(sm) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+.bg-secondary {
+    background-color: #141414 !important;
+}
+
+.text-danger {
+    color: #d91921 !important;
+}
+
+.hero-categories {
+    position: absolute;
+    top: 140px;
+    left: 64px;
+    @include media-breakpoint-down(sm) {
+        content: "";
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: transparent;
+        background-image: linear-gradient(236deg, hsla(0, 0%, 8%, 0) 0, hsla(0, 0%, 100%, 0.15) 0%, hsla(0, 0%, 8%, 0.35) 29%, hsla(0, 0%, 8%, 0.58) 44%, #141414 88%, #141414);
+        background-position: 0 top;
+        background-repeat: repeat-x;
+        background-size: 100% 100%;
+        // bottom: 400px;
+        height: 100px;
+        left: 0;
+        opacity: 1;
+        top: 18vw;
+        width: 100%;
+        position: absolute;
+        padding-left: 15px;
+      }
+  }
+
+  .main-body {
+      padding-bottom: 128px;
+  }
+
+  .video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      width: 100vw;
+      height: 100vh;
+  }
+  .close-movie {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 70px;
+    line-height: 1;
+    cursor: pointer;
+    &::before {
+        background-color: rgb(0 0 0 / 50%);
+        filter: blur(1px);
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+    }
+  }
+
+  .swiper-wrapper {
+      .swiper-slide {
+        &:nth-child(6n), &:last-child {
+            .movie-details-card {
+                &.active {
+                    right: 0;
+                    left: unset;
+                }
+            }
+        }
+        &:first-child {
+            .movie-details-card {
+                &.active {
+                    right: unset;
+                    left: 0;
+                }
+            }
+        }
+        .movie-details-card {
+            &.active {
+                right: unset;
+                left: calc(50% - 200px);
+            }
+        }
+      }
+  }
+
+  .swiper-pagination {
+    width: 100% !important;
+    top: 340px !important;
+    text-align: end !important;
+    z-index: 0 !important;
+    @include media-breakpoint-down(sm) {
+        top: 33vh !important;
+        text-align: start !important;
+        left: 15px !important;
+      }
+    &-bullet {
+        width: 20px !important;
+        height: 3px !important;
+        background-color: gray !important;
+        border-radius: 0 !important;
+        margin: 1px !important;
+    }
+  }
+
+  .add-icon, .remove-icon, .play-icon, .details-icon, .icon-hamburger, .icon-close, .icon-close-modal {
+      font-size: 42px;
+      cursor: pointer;
+      color: lighten($color: #141414, $amount: 50);
+  }
+  .add-profile-icon {
+      font-size: 42px;
+      color: grey;
+      cursor: pointer;
+      width: 123px;
+      height: 123px;
+      padding: 1.7rem;
+    border-radius: .25rem;
+      &:hover {
+          background-color: #ffffff;
+      }
+  }
+  .icon-close {
+    &-video {
+        font-size: 70px;
+        top: 0;
+        left: calc(50% - 35px);
+        cursor: pointer;
+        position: absolute;
+        color: #ffffff
+    }
+  }
+  .search-icon {
+      font-size: 20px;
+      color: #ffffff;
+  }
+  .icon-account, .icon-logout, .icon-home, .icon-videos {
+    font-size: 42px;
+    color: #ffffff;
+  }
+
+  .play-icon {
+      color: #ffffff;
+  }
+
+  a {
+      z-index: 2;
+      &:hover {
+          color: #141414;
+      }
+  }
+
+  .playv2, .playv2-hero {
+      background-color: #ffffff;
+      width: fit-content;
+      height: 42px;
+      position: relative;
+      display: block;
+      padding-right: .75rem;
+      font-size: 22px;
+      font-weight: 700;
+      border-radius: .25rem;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &-icon {
+          color: #141414;
+          font-size: 42px;
+      }
+  }
+  .playv2-hero {
+      margin-top: 2.5rem;
+    height: 61px !important;
+    width: 175px ;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    background-color: transparent !important;
+  
+    &::before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(109, 109, 110, 0.7);
+    }
+}
+
+  .form-control {
+    background-color: #454545 !important;
+    border-color: #454545 !important;
+    &.search {
+        background-color: transparent !important;
+        border-radius: 0 !important;
+        position: relative !important;
+        color: #d3d3d3 !important;
+        height: 38px !important;
+        border-color: #ced4da !important;
+        font-size: 14px !important;
+       }
+    &:focus {
+        box-shadow: none;
+    }
+    &-lg {
+        &::placeholder {
+            font-size: 18px !important;
+            line-height: 1;
+        }
+        color: #ffffff !important;
+        font-size: 18px !important;
+    }
+  }
+
+  .icon-hamburger {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
