@@ -152,14 +152,13 @@ const Header = () => {
                  <Link onClick={() => setMobileMenu(!mobileMenu)}>
                  <GiHamburgerMenu className="icon-hamburger" />
                </Link>
-                   <div className="search-bar">
-                   <SearchBar />
-                   </div>
+            
                 </>
             )}
-         
-            {mobileMenu && (
-            
+                <div className="search-bar">
+                   <SearchBar />
+                   </div>
+            {mobileMenu && (  
         <>
               <Link onClick={() => setMobileMenu(!mobileMenu)}>
               <AiOutlineClose className="icon-close" />
